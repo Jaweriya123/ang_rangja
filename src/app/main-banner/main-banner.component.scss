@@ -1,0 +1,21 @@
+.banner {
+    img{
+        max-width: 100%;
+        height: auto;
+        margin-top: 17px;
+        background-color: black;
+    }
+}
+@media screen and (max-width: 989px) {
+    .banner-image img{
+        width: 100%;
+        height: auto;
+    }
+ }
+// .test{
+//     height: 400px;
+//     width:500px;
+//     h1{
+//         font-size:30px;
+//     }
+// }

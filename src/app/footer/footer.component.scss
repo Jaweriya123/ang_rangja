@@ -1,0 +1,116 @@
+@mixin footerblockicon {
+    font-size: 15px;
+         a{
+             text-decoration: none;
+             color: #aaa;
+             &:hover{
+                 color: #006bb4;
+            }  
+          } 
+          i{
+             padding-right: 7px;
+             font-size: 19px;
+             color: #ED326B;
+         
+          } 
+
+}
+
+.page-footer{
+    background-color: #111111;
+    padding: 20px;
+    .footer-title{
+        font-size: 128.571%;
+        position: relative;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 15px
+    }
+    .footer-content{
+        ul{
+        display: flex;
+        list-style: none;
+        padding: 0;   
+        margin-bottom: 8px;
+        
+        li{
+            @include footerblockicon(); 
+            &.phone{
+                  margin-right: 1rem;
+            } 
+            &.facebook{
+                margin-right: 3rem;
+              }
+            &.faqs{
+                margin-right: 8rem;
+            }
+            &.exchange{
+                margin-right: 2rem;
+            }
+        }
+    }
+    .footer-searchbox{
+        position: relative;
+        .footer-search-input{
+            height: 44px;
+            width: 100%;
+            display: table-cell;
+            background-color: #fff;
+            border: none;
+            padding: 0 15px;
+            color: #222;
+        }
+        .f-searchbtn{
+            background-color: #ED326B;
+            color: #FFFFFF; 
+            border: none; 
+            position: absolute;
+            right: 0;  
+            width: 122px;
+            border: none;  
+            height: 100%;     
+        }
+
+    }
+}      
+
+}
+@media screen and (max-width: 989px) {
+ 
+    
+    .footer-content{
+        ul{
+            display: block !important;
+        }
+    .f-searchbtn{
+        top:-9px;  
+        width: 90px;  
+    }
+}
+}
+
+@media (max-width: 977px){
+    .page-footer .footer-content .footer-searchbox .f-searchbtn {
+        background-color: #ED326B;
+        color: #FFFFFF;
+        border: none;
+        position: absolute;
+        right: 0;
+        width: 122px;
+        border: none;
+        height: 100%;
+        top: 0;
+    }
+    
+    }
+    @media (max-width: 762px){
+        .page-footer .footer-content .footer-searchbox .f-searchbtn {
+            width: 90px;
+        }
+    }
+    @media (max-width: 572px){
+        .page-footer .footer-content .footer-searchbox .f-searchbtn {
+            width: 90px;
+            top: -8px;
+        }
+    }
