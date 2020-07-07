@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 $primary-color : #ed326b;
 $secondry-color:#FFFFFF;
 $black-color:#222;
@@ -158,6 +159,7 @@ body {
     min-width: 370px !important;
     border: none;
     height: 34px;
+    margin: 0 !important;
   }
   .searchicon{
     position: absolute;
@@ -166,7 +168,7 @@ body {
 }
 }
 }
-// @import "mixin";
+
 
 @mixin transition($value){
     transition: $value;
@@ -275,13 +277,15 @@ body {
     .col-lg-3, .col-lg-6{
         padding: 0;
     }
-    .container{
-        padding-left: 6px;
-    }
+    // .container{
+    //     // padding-left: 6px;
+    // }
     .banner-image{
         position: relative;
         overflow: hidden;
-        padding: 12px 12px 0;
+        padding: 6px 0px 0;
+        margin-right: 6px;
+       
         .hover-banner{
             position: absolute;
             top: 100%;
@@ -335,13 +339,16 @@ body {
 
 //product slider
 .product-slider{
-    @include product-title(); 
+    .p-container{
+        padding: 0px;
+    @include product-title();
+     
        .owl-theme {
            .owl-nav {
                position: absolute;
                margin: 0;
                top: -52px;
-               right: 11px;
+               right: 0px;
                display: flex;
              
                .owl-prev{
@@ -392,7 +399,7 @@ body {
            }
      }
    }    
-
+    }
   .product-content{
        margin-top: 44px;
       .product-container{
@@ -473,15 +480,17 @@ body {
 }
 // group list slider
 .group-list{
+    .g-container{
     @include product-title();
     text-align: left !important;
-    margin: 30px 0;
+    // margin: 30px 0;
+    margin-top: 24px;
     .owl-theme {
         .owl-nav {
             position: absolute;
             margin: 0;
             top: -52px;
-            right: 11px;
+            right: 0px;
             display: flex;
           
             .owl-prev{
@@ -536,12 +545,17 @@ body {
   .group-item{
     margin: 18px 19px;
     .group-container{
-        margin-bottom: 17px;
+        margin-bottom: 32px;
       .inside-group{
           @include product-details();
-          margin-left: 15px;
-      }
-  }
+        //   margin-left: 15px;
+        .product-price{
+        padding-left: 15px !important;
+        }
+     
+    }
+}
+}
 }
 }
 
@@ -674,10 +688,12 @@ body {
 .mobile-header {
     display: block;  
     text-align: right;
+    padding: 0;
     .mobile-top{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0px 10px;
       .mobile-menu{
         // margin: auto;
         text-align: left;
@@ -702,7 +718,7 @@ body {
     }
     .mobile-bottom{
         background-color: #f5f5f5;
-        padding: 10px 0;
+        padding: 10px 3px;
         width: 100%;
         text-align: center;
         height: 55px;
@@ -743,6 +759,7 @@ body {
         display: flex;
         border-bottom: 1px solid #ddd;
         flex-wrap: nowrap;
+        margin-right: 20px;
              a{
                 color: #222 !important;
                 text-transform: uppercase !important;
@@ -750,6 +767,8 @@ body {
                 font-size: 14px !important;
                  border: none ;
                  padding: 0;
+                 padding-bottom: 7px; 
+                 font-style: normal;               
                   &.show{
                     border-color:  black !important;
                   }
@@ -765,14 +784,24 @@ body {
    .account-tab{
        .account-tab-content{
         list-style: none;
+        padding: 0;
            li{
                list-style: none;
            a{
-            color: #222 !important;
-            text-transform: uppercase !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-             border: none !important;
+            text-decoration: none;
+            font-size: 14px;
+            color: $black-color;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-transform: uppercase;
+            text-align: left;
+            cursor: pointer;
+            outline: none;       
+            margin-bottom: 9px;
+            padding: 0 18px;
+            font-style:normal;
             }
            }  
        }
@@ -782,6 +811,7 @@ body {
 
    .sidebar-dropdown{
        .dropdown-btn {
+        
         // padding: 6px 8px 6px 16px;
         text-decoration: none;
         font-size: 14px;
@@ -795,11 +825,27 @@ body {
         cursor: pointer;
         outline: none;       
         margin-bottom: 9px;
-        
+        a{
+            text-decoration: none;
+            color: $black-color;
+
+            &:hover{
+                color: #006bb4;
+                font-size: 14px;
+            }  
+        }
         i{
             float: right;
             padding-right: 6px;
             font-size: 17px;
+            &:active{
+                float: right;
+                padding-right: 6px;
+                font-size: 17px;
+                transform: rotate(180deg);
+        
+            }
+
         }
     }
         .dropdown-container{
@@ -821,56 +867,12 @@ body {
         }
     }
 }
-.mobile-header {
-    display: block;  
-    text-align: right;
-    .mobile-top{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      .mobile-menu{
-        // margin: auto;
-        text-align: left;
-        font-size: 25px;
-        color:#ED326B;
-      } 
-      .mobile-logo {
-        text-align: center;
-        img{
-            max-width: 100%;
-            height: auto !important;
-            width: 50%;
-        }
-        
-      } 
-      .mobile-cart{
-        // margin: auto;
-        text-align: right;
-        font-size: 25px;
-        color:#ED326B;
-      }
-    }
-    .mobile-bottom{
-        background-color: #f5f5f5;
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
-        height: 55px;
-         .mobile-searchbar {
-            height: 34px;
-            max-width: unset;
-            width: 100%;
-            padding: 0 40px 0 10px;
-            background: #fff !important;
-            border: 1px solid #ddd !important;
-        }
-        .mobile-searchicon{
-            position: relative;
-            bottom: 26px;
-            right: 12px;
-        }
-    }
- }
+
+}
+@media(min-width:690px) and (max-width:990px){
+.group-level0 {
+    margin-right: 68px;
+}
 }
 @media (max-width: 977px){
 .page-footer .footer-content .footer-searchbox .f-searchbtn {
@@ -884,14 +886,15 @@ body {
     height: 100%;
     top: 0;
 }
-.group-list .group-item .group-container {
-    margin-left: 42px;
-}
+
 }
 @media (max-width: 762px){
     .page-footer .footer-content .footer-searchbox .f-searchbtn {
         width: 90px;
     }
+    .group-image .banner-image {
+    margin-right: 0px;
+}
 }
 @media (max-width: 572px){
     .page-footer .footer-content .footer-searchbox .f-searchbtn {
